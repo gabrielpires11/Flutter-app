@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gabriel_str/pages/cadastro.dart';
 import 'package:gabriel_str/pages/login.dart';
 import 'package:gabriel_str/pages/home.dart';
+import 'package:gabriel_str/pages/perfil.dart';
 import 'package:gabriel_str/pages/splash_screen.dart';
 import 'package:gabriel_str/shared/style.dart';
 
@@ -26,9 +27,11 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         '/': (context) => const SplashScreen(),
-        '/login': (context) => const Login(),
+        '/login': (context) =>  const Login(),
         '/cadastro' : (context) => const Cadastro(),
         '/home' : (context) => Home(),
+        '/perfil' : (context) => Perfil(),
+
       },
     );
   }

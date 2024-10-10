@@ -13,7 +13,30 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int _selectedIndex = 0;
+
+  // Lista de rotas para navegação
+  final List<String> _routes = [
+    '/home',
+    '/busca', // Você pode adicionar a rota para a tela de busca
+    '/biblioteca', // Se houver uma rota para a biblioteca
+    '/perfil',
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    // Navegar para a rota específica ao selecionar o item
+    Navigator.pushNamed(context, _routes[index]);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,9 +48,10 @@ class Home extends StatelessWidget {
               icon: Icon(Icons.library_music), label: 'Biblioteca'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
         ],
-        currentIndex: 0,
+        currentIndex: _selectedIndex,
         selectedItemColor: Colors.purple,
         unselectedItemColor: Colors.grey,
+        onTap: _onItemTapped,
       ),
       body: Stack(
         children: [
@@ -40,7 +64,7 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
-          
+
           // Content over the background
           SafeArea(
             child: SingleChildScrollView(
@@ -51,7 +75,8 @@ class Home extends StatelessWidget {
                   children: [
                     // Search bar
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.8),
                         borderRadius: BorderRadius.circular(30),
@@ -69,7 +94,7 @@ class Home extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 20),
-                    
+
                     // Popular Artists Section
                     Text(
                       "Popular artists",
@@ -91,7 +116,7 @@ class Home extends StatelessWidget {
                         ],
                       ),
                     ),
-                    
+
                     SizedBox(height: 20),
 
                     // Popular Albums Section
@@ -154,4 +179,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-

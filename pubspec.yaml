@@ -73,6 +73,15 @@ flutter:
     - assets/img/artista1.png
     - assets/img/artista2.png
     - assets/img/artista3.png
+    - assets/img/albums1.png
+    - assets/img/albums2.png
+    - assets/img/albums3.png
+    - assets/img/kauan.png
+    - assets/img/letzel.png
+    - assets/img/lipinho.png
+    - assets/img/pedrao.png
+    - assets/img/pires.png
+    - assets/img/mais.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

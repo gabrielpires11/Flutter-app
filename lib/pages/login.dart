@@ -65,6 +65,7 @@ class _LoginState extends State<Login> {
                               iconColor: Colors.black,
                               icon: Icon(Icons.mail),
                               hintText: "Informe o e-mail",
+                              hintStyle: TextStyle(color: Colors.white),
                             ),
                             validator: (String? email) {
                               if (email == "" || email == null) {
@@ -98,6 +99,7 @@ class _LoginState extends State<Login> {
                                 },
                               ),
                               hintText: "Informe a senha",
+                              hintStyle: TextStyle(color: Colors.white),
                             ),
                             validator: (String? senha) {
                               if (senha == "" || senha == null) {
